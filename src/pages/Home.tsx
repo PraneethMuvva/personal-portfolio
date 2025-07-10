@@ -1,5 +1,5 @@
 const Home = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen text-base-content p-4">
+  <div className="flex flex-col items-center justify-center text-base-content p-4">
     <img
       src="/Logo_Transparent_Full_Crop.svg"
       alt="Logo"
