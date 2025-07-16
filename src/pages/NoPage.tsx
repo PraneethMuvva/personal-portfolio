@@ -5,7 +5,9 @@ const NoPage = () => {
       <p className="text-lg text-center text-base-content/70">
         The page you are looking for does not exist.
       </p>
-      <a href="/" className="btn btn-primary mt-6">Go Home</a>
+      <a href="/" className="btn btn-primary mt-6">
+        Go Home
+      </a>
     </div>
   );
 };
