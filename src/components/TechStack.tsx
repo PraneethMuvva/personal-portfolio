@@ -11,6 +11,7 @@ import {
   SiKicad,
   SiSap,
 } from 'react-icons/si';
+import { IoHardwareChip } from 'react-icons/io5';
 import { VscVscode, VscAzure } from 'react-icons/vsc';
 import { TbSql } from 'react-icons/tb';
 import { type IconType } from 'react-icons';
@@ -53,6 +54,7 @@ const techStackItems: Record<string, { Icon: IconType; label: string }[]> = {
     { Icon: FaHtml5, label: 'HTML5' },
     { Icon: FaCss3Alt, label: 'CSS3' },
     { Icon: TbSql, label: 'SQL' },
+    { Icon: IoHardwareChip, label: 'Verilog' },
   ],
   'Frameworks & Libraries': [
     { Icon: SiFlask, label: 'Flask' },
