@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-base-300 text-neutral-content items-center p-4">
+    <footer className="footer sm:footer-horizontal bg-base-300 text-base-content items-center p-4">
       <aside className="grid-flow-col items-center">
         <Link to="/">
           <img src={Logo} className="h-10 w-10 pr-2" />
@@ -16,7 +16,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/praneeth-muvva-6920b0278"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-circle btn-ghost btn-primary"
+          className="btn btn-circle btn-ghost text-base-content hover:text-primary"
         >
           <FaLinkedin className="w-5 h-5" />
         </a>
@@ -24,7 +24,7 @@ const Footer = () => {
           href="https://github.com/PraneethMuvva"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-circle btn-ghost btn-primary"
+          className="btn btn-circle btn-ghost text-base-content hover:text-primary"
         >
           <FaGithub className="w-5 h-5" />
         </a>
