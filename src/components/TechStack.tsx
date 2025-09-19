@@ -1,4 +1,4 @@
-import { FaPython, FaJava, FaReact, FaDocker, FaGitAlt, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaPython, FaJava, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
 import {
   SiCplusplus,
   SiC,
@@ -10,15 +10,23 @@ import {
   SiUipath,
   SiKicad,
   SiSap,
+  SiNumpy,
+  SiPandas,
 } from 'react-icons/si';
 import { IoHardwareChip } from 'react-icons/io5';
 import { VscVscode, VscAzure } from 'react-icons/vsc';
-import { TbSql } from 'react-icons/tb';
+import { TbSql, TbBrandCSharp } from 'react-icons/tb';
 import { type IconType } from 'react-icons';
 import { useState } from 'react';
 
+const XilinxIcon = ({ className }: { className?: string }) => (
+  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={`w-9 h-9 ${className}`}>
+    <path d="M8 18l5.241 6H5.586L.345 18l5.241-6L.345 6l5.241-6h7.655L8 6l5.241 6L8 18zM23.655 0H13.241l5.241 6 5.173-6zM13.241 24h10.414l-5.172-6-5.242 6z" fill="currentColor"/>
+  </svg>
+);
+
 type TechItemProps = {
-  Icon: IconType;
+  Icon: IconType | React.ComponentType<{ className?: string }>;
   label: string;
   isActive: boolean;
   onHover: () => void;
@@ -28,7 +36,7 @@ type TechItemProps = {
 const TechItem = ({ Icon, label, isActive, onHover, onLeave }: TechItemProps) => (
   <div
     className={`flex flex-col items-center text-sm w-24 p-4 rounded-xl ring-1 transition-all duration-200 cursor-pointer 
-      ${isActive ? 'bg-primary/10 ring-primary scale-105' : 'bg-base-200 ring-base-300'} 
+      ${isActive ? 'bg-primary/10 ring-primary scale-105' : 'bg-base-200 ring-base-300'}
       hover:scale-105`}
     onMouseEnter={onHover}
     onMouseLeave={onLeave}
@@ -44,15 +52,14 @@ const TechItem = ({ Icon, label, isActive, onHover, onLeave }: TechItemProps) =>
   </div>
 );
 
-const techStackItems: Record<string, { Icon: IconType; label: string }[]> = {
+const techStackItems: Record<string, { Icon: IconType | React.ComponentType<{ className?: string }>; label: string }[]> = {
   Languages: [
     { Icon: FaPython, label: 'Python' },
     { Icon: SiC, label: 'C' },
     { Icon: SiCplusplus, label: 'C++' },
+    { Icon: TbBrandCSharp, label: 'C#' },
     { Icon: FaJava, label: 'Java' },
     { Icon: SiJavascript, label: 'JavaScript' },
-    { Icon: FaHtml5, label: 'HTML5' },
-    { Icon: FaCss3Alt, label: 'CSS3' },
     { Icon: TbSql, label: 'SQL' },
     { Icon: IoHardwareChip, label: 'Verilog' },
   ],
@@ -61,6 +68,8 @@ const techStackItems: Record<string, { Icon: IconType; label: string }[]> = {
     { Icon: FaReact, label: 'React' },
     { Icon: SiTensorflow, label: 'TensorFlow' },
     { Icon: SiPytorch, label: 'PyTorch' },
+    { Icon: SiNumpy, label: 'NumPy' },
+    { Icon: SiPandas, label: 'Pandas' },
     { Icon: SiArduino, label: 'Arduino' },
   ],
   'Cloud & DevOps': [
@@ -73,6 +82,7 @@ const techStackItems: Record<string, { Icon: IconType; label: string }[]> = {
     { Icon: VscVscode, label: 'VS Code' },
     { Icon: SiSap, label: 'SAP B1' },
     { Icon: SiKicad, label: 'KiCAD' },
+    { Icon: XilinxIcon, label: 'Vivado' },
   ],
 };
 
